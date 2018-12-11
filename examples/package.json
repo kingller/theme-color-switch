@@ -1,0 +1,25 @@
+{
+  "name": "theme-color-toggle-example-basic",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "raw-loader": "^1.0.0",
+    "react": "^16.6.1",
+    "react-color": "^2.14.1",
+    "react-dom": "^16.6.1",
+    "react-scripts": "^2.1.1",
+    "theme-color-generator": "^1.2.0",
+    "theme-color-toggle": "^1.0.0"
+  },
+  "scripts": {
+    "start": "npm run color && react-scripts start",
+    "build": "react-app-rewired build",
+    "color": "node color.js"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 8",
+    "not op_mini all"
+  ]
+}
