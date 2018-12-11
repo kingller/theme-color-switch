@@ -21,7 +21,7 @@ less.render(
    }
 );
 ```
-## Note: You need use `theme-color-generator` ( like `color.js` in example ) to generate color.less file first, then toggle color with this package like `Theme.js` in example 
+## Note: You need use [theme-color-generator](https://github.com/kingller/theme-color-generator) ( like `color.js` in example ) to generate color.less file first, then toggle color with this package like `Theme.js` in example 
 
 
 Now you can update colors by updating less avriables like the example
