@@ -1,0 +1,33 @@
+{
+  "name": "theme-color-toggle",
+  "version": "1.0.0",
+  "description": "This a script to toggle color specific styles less file and which you can use to change theme dynamically in browser",
+  "keywords": [
+    "css",
+    "dynamic-theme",
+    "less",
+    "theme",
+    "theme-toggle"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kingller/theme-color-toggle.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Kingller Tang",
+    "url": "https://github.com/kingller"
+  },
+  "files": [
+    "index.js",
+    "utils/",
+    "package.json",
+    "README.md"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
