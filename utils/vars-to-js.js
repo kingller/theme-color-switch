@@ -1,6 +1,6 @@
 function varsToJs(sheet) {
     var lessVars = {};
-    var matches = sheet.match(/(^|\n|;|})\s*(@(.*):[^;\}\n]*)/g) || [];
+    var matches = sheet.match(/(^|\n|;|})\s*(@([^:;\}\n]*):[^;\}\n]*)/g) || [];
 
     matches.forEach(function (variable) {
         variable = variable.match(/^[^@]*(@.*)/)[1];
