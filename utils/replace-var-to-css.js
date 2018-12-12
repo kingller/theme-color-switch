@@ -3,8 +3,8 @@ function replaceVar(input, varJs) {
         return input;
     }
     // remove variables
-    input = input.replace(/(^|\n|;|})\s*(@(.*):[^;\}\n]*)/g, '');
-    input = input.replace(/^;/, '');
+    input = input.replace(/(^|\n)\s*(@([^:;\}\n]*):[^;\}\n]*;*)/g, '');
+    input = input.replace(/([;|\}]\s*)(@([^:;\}\n]*):[^;\}\n]*;*)/g, '$1');
 
     // repalce variables
     Object.keys(varJs).reverse().forEach(function (varName) {
