@@ -1,53 +1,17 @@
 'use strict';
 
-var varsToJs = require('./utils/vars-to-js.js');
-var replaceVarColor = require('./utils/replace-color-in-var.js');
-var calcColorFunction = require('./utils/calc-color-function.js');
-var replaceVarToCss = require('./utils/replace-var-to-css.js');
+var render = require('./utils/render.js');
+var colorFunctions = require('./utils/color.js');
+var parseColorFunction = require('./utils/parse-color-function.js');
 
-function render(input, options, callback) {
-    if (!callback) {
-        return;
-    }
-
-    if (!input) {
-        callback(null, {css: ''});
-        return;
-    }
-
-    if (typeof input !== 'string') {
-        callback('The first argument must be string');
-        return;
-    }
-
-    try {
-        var varJs = varsToJs(input);
-        var modifyVars = {};
-
-        if (options && typeof options === 'object') {
-            modifyVars = options.modifyVars || {};
-        }
-
-        Object.keys(varJs).forEach(function (varName) {
-            if (modifyVars[varName]) {
-                varJs[varName] = modifyVars[varName];
-            }
-        });
-
-        varJs = replaceVarColor(varJs);
-        varJs = calcColorFunction(varJs);
-
-        // replace variables
-        input = replaceVarToCss(input, varJs);
-
-        callback(null, {
-            css: input
-        });
-    } catch (err) {
-        return callback(err);
-    }
-}
-
-module.exports = {
+var exportObj = {
     render: render
 };
+
+Object.keys(colorFunctions).forEach(function (funcName) {
+    exportObj[funcName] = function () {
+        return parseColorFunction(colorFunctions[funcName], arguments, funcName);
+    }
+});
+
+module.exports = exportObj;
