@@ -27,8 +27,10 @@ less.render(
 Now you can update colors by updating less avriables like the example
 
 
+如只想使用主题切换的，上面的内容就已完成。
 
-## 想要使用less颜色函数来用js实时转化颜色的，请往下看（详细说明请访问[less官网](http://lesscss.cn/functions/#color-definition)）。如只想使用主题切换的，上面的内容就已完成。
+
+## 想要用js执行less颜色函数实时转化颜色的，请往下看（详细说明请访问[less官网](http://lesscss.cn/functions/#color-definition)）。
 
 返回`Color`对象的可以使用`toCSS`属性来获取输出值.
 
