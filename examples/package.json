@@ -9,7 +9,7 @@
     "react-dom": "^16.6.1",
     "react-scripts": "^2.1.1",
     "theme-color-generator": "^1.2.0",
-    "theme-color-toggle": "^1.0.0"
+    "theme-color-toggle": "^1.1.0"
   },
   "scripts": {
     "start": "npm run color && react-scripts start",
