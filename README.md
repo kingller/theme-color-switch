@@ -37,10 +37,10 @@ Now you can update colors by updating less avriables as the example
 
 ### 使用示例
 ```javascript
-import { shade } from 'theme-color-toggle';
+import { shade, tint, fade } from 'theme-color-toggle';
 
-let shadeColor = shade('#007fff', '50%');
-console.log(shadeColor.toCSS());
+let shadeColor = shade('#007fff', '50%').toCSS();
+let fadeColor = fade(tint('#007fff', '30%'), '10%').toCSS();
 ```
 
 ### 颜色定义函数
