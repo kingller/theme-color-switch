@@ -35,6 +35,14 @@ Now you can update colors by updating less avriables as the example
 1. 返回`Color`对象的可以使用`toCSS()`属性来获取输出值。也可以作为下一个函数的第一个参数。
 2. 返回`Dimension`对象的可以作为`number`类型传给下一个函数。
 
+### 使用示例
+```javascript
+import { shade } from 'theme-color-toggle';
+
+let shadeColor = shade('#007fff', '50%');
+console.log(shadeColor.toCSS());
+```
+
 ### 颜色定义函数
 
 #### rgb
