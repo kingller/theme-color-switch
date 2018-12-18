@@ -40,7 +40,7 @@ Now you can update colors by updating less avriables as the example
 import { shade, tint, fade } from 'theme-color-toggle';
 
 let shadeColor = shade('#007fff', '50%').toCSS();
-let fadeColor = fade(tint('#007fff', '30%'), '10%').toCSS();
+let fadeTintColor = fade(tint('#007fff', '30%'), '10%').toCSS();
 ```
 
 ### 颜色定义函数
