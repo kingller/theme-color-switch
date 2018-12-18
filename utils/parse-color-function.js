@@ -2,6 +2,34 @@ var Color = require('./tree/color.js');
 var Dimension = require('./tree/dimension.js');
 var colors = require('./data/colors.js');
 
+function parseDimension(value) {
+    if (value instanceof Dimension) {
+        return value;
+    } else if (typeof value === 'string') {
+        var unit;
+        var matchs = value.match(/[^\d\.]*$/);
+        if (matchs && matchs.length > 0 && matchs[0]) {
+            unit = matchs[0];
+        }
+        return new Dimension(value, unit);
+    }
+    return new Dimension(value);
+}
+
+function parseParams(value, type) {
+    if (typeof value === 'undefined') {
+        return value;
+    }
+    if (type === 'color') {
+        if (!(value instanceof Color)) {
+            return new Color(value);
+        }
+    } else if (type === 'dimension') {
+        return parseDimension(value);
+    }
+    return value;
+}
+
 function parseColorFunction(colorFunction, params, funcName) {
     var newParams = [];
     if (params && params.length > 0) {
@@ -25,7 +53,7 @@ function parseColorFunction(colorFunction, params, funcName) {
             paramsNum = Math.min(paramsNum, params.length);
             for (var num = 0; num < paramsNum; num++) {
                 if ((num !== 0 || !isColorParam) && typeof params[num] === 'string') {
-                    params[num] = parseFloat(params[num]);
+                    params[num] = parseDimension(params[num]);
                 }
             }
         }
@@ -34,18 +62,17 @@ function parseColorFunction(colorFunction, params, funcName) {
             params[0] = new Color(params[0]);
         }
         if (params.length > 1) {
-            if (funcName === 'mix') {
-                if (!(params[1] instanceof Color)) {
-                    params[1] = new Color(params[1]);
+            for (var j = 1; j < Math.min(params.length, 4); j++) {
+                var parseType = '';
+                if (j === 1) {
+                    parseType = funcName === 'mix' || funcName === 'contrast'? 'color': 'dimension';
+                } else if (j === 2) {
+                    parseType = funcName === 'mix'? 'dimension': funcName === 'contrast'? 'color': '';
+                } else if (j === 3 && funcName === 'contrast') {
+                    parseType = 'dimension';
                 }
-            } else {
-                if (!(params[1] instanceof Dimension)) {
-                    params[1] = new Dimension(params[1]);
-                }
+                params[j] = parseParams(params[j], parseType);
             }
-        }
-        if (funcName === 'mix' && params.length > 2 && !(params[2] instanceof Dimension)) {
-            params[2] = new Dimension(params[2]);
         }
     }
     return colorFunction.apply(null, params);

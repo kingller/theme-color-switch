@@ -140,42 +140,42 @@ Output: `65%`
 
 #### saturate
 Returns: `Color`  
-Example: `saturate(hsl(90, 80%, 50%), 20%)`  
+Example: `saturate(#80e619, 20%)`  
 Output: `#80ff00`  
 
 #### desaturate
 Returns: `Color`  
-Example: `desaturate(hsl(90, 80%, 50%), 20%)`  
-Output: `#80cc33`  
+Example: `desaturate(#80e619, 20%)`  
+Output: `#80cd32`  
 
 #### lighten
 Returns: `Color`  
-Example: `lighten(hsl(90, 80%, 50%), 20%)`  
+Example: `lighten(#80e619, 20%)`  
 Output: `#b3f075`  
 
 #### darken
 Returns: `Color`  
-Example: `darken(hsl(90, 80%, 50%), 20%)`  
+Example: `darken(#80e619, 20%)`  
 Output: `#4d8a0f`  
 
 #### fadein
 Returns: `Color`  
-Example: `fadein(hsla(90, 90%, 50%, 0.5), 10%)`  
+Example: `fadein(rgba(128, 242, 13, 0.5), 10%)`  
 Output: `rgba(128, 242, 13, 0.6)`  
 
 #### fadeout
 Returns: `Color`  
-Example: `fadeout(hsla(90, 90%, 50%, 0.5), 10%)`  
+Example: `fadeout(rgba(128, 242, 13, 0.5), 10%)`  
 Output: `rgba(128, 242, 13, 0.4)`  
 
 #### fade
 Returns: `Color`  
-Example: `fade(hsl(90, 90%, 50%), 10%)`  
+Example: `fade(#80f20d, 10%)`  
 Output: `rgba(128, 242, 13, 0.1)`  
 
 #### spin
 Returns: `Color`  
-Example: `spin(hsl(10, 90%, 50%), 30)`  
+Example: `spin(#f2330d, 30)`  
 Output: `#f2a60d`  
 
 #### mix
@@ -195,7 +195,7 @@ Output: `#004080`
 
 #### greyscale
 Returns: `Color`  
-Example: `greyscale(hsl(90, 90%, 50%))`  
+Example: `greyscale(#80f20d)`  
 Output: `#808080`  
 
 #### contrast
