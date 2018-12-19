@@ -4,11 +4,14 @@
   "description": "This a script to toggle color specific styles less file and which you can use to change theme dynamically in browser",
   "keywords": [
     "color",
+    "color-function",
+    "color-toggle",
     "css",
     "dynamic-theme",
     "function",
     "less",
     "theme",
+    "theme-color",
     "theme-toggle"
   ],
   "repository": {
