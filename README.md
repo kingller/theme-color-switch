@@ -2,12 +2,17 @@
 
 This a script to toggle color specific styles less file and which you can use to change theme dynamically in browser
 
+## Install
+```
+$ npm install theme-color-toggle
+```
+
 ## Example:
 
 ```
 const less = require('theme-color-toggle');
 less.render(
-   colorSource,
+   colorSource, // theme file content which generate by theme-color-generator
    {
        modifyVars: vars,
    },
@@ -40,7 +45,7 @@ Now you can update colors by updating less avriables as the example
 import { shade, tint, fade } from 'theme-color-toggle';
 
 let shadeColor = shade('#007fff', '50%').toCSS();
-let fadeTintColor = fade(tint('#007fff', '30%'), '10%').toCSS();
+let fadeAndTintColor = fade(tint('#007fff', '30%'), '10%').toCSS();
 ```
 
 ### 颜色定义函数
