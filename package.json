@@ -5,14 +5,13 @@
   "keywords": [
     "color",
     "color-function",
-    "color-toggle",
     "css",
     "dynamic-theme",
     "function",
     "less",
     "theme",
     "theme-color",
-    "theme-toggle"
+    "toggle"
   ],
   "repository": {
     "type": "git",
