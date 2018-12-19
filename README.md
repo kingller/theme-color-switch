@@ -14,7 +14,9 @@ const less = require('theme-color-toggle');
 less.render(
    colorSource, // theme file content which generate by theme-color-generator
    {
-       modifyVars: vars,
+       modifyVars: {
+           '@theme-color': '#0035ff' // the variables in theme file which you want to change
+       },
    },
    function(e, output) {
       if (e) {
@@ -26,7 +28,7 @@ less.render(
    }
 );
 ```
-## Note: You need to generate color.less file with [theme-color-generator](https://github.com/kingller/theme-color-generator) ( as `color.js` in example ) first, then toggle color with this package as `Theme.js` in example 
+## Note: You need to generate `color.less` file with [theme-color-generator](https://github.com/kingller/theme-color-generator) ( as `color.js` in example ) first, then toggle color with this package as `Theme.js` in example 
 
 
 Now you can update colors by updating less avriables as the example
