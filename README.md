@@ -7,6 +7,9 @@ This a script to toggle color specific styles less file and which you can use to
 $ npm install theme-color-toggle
 ```
 
+## Demo
+Try out the [demo](https://kingller.github.io/theme-color-toggle/)
+
 ## Example:
 
 ```
