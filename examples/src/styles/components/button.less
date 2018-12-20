@@ -30,9 +30,14 @@
   background-color: @primary-color;
   border-color: @primary-color;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
-}
 
-.btn-primary:hover {
-  background-color: @primary-hover-color;
-  border-color: @primary-hover-color;
+  &:hover {
+    background-color: @primary-hover-color;
+    border-color: @primary-hover-color;
+  }
+
+  &:active {
+    background-color: @primary-color;
+    border-color: @primary-color;
+  }
 }
