@@ -8,6 +8,8 @@
 
 # Next
 
+# 1.1.1
+1. <font color=green>新增</font> Online Demo
 
 # 1.1.0
 1. <font color=green>新增</font> 暴露`less`颜色函数，可以用`js`调用转换颜色值

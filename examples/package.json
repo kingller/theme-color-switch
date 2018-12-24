@@ -1,5 +1,5 @@
 {
-  "name": "theme-color-toggle-example-basic",
+  "name": "theme-color-switch-example-basic",
   "version": "1.0.0",
   "private": true,
   "homepage": ".",
@@ -15,8 +15,8 @@
     "react-color": "^2.14.1",
     "react-dom": "^16.6.1",
     "react-scripts": "^2.1.1",
-    "theme-color-generator": "^1.2.0",
-    "theme-color-toggle": "^1.1.0"
+    "theme-color-generator": "^1.2.1",
+    "theme-color-switch": "^1.1.1"
   },
   "browserslist": [
     ">0.2%",

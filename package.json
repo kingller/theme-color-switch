@@ -1,7 +1,7 @@
 {
-  "name": "theme-color-toggle",
-  "version": "1.1.0",
-  "description": "This a script to toggle color specific styles less file and which you can use to change theme dynamically in browser",
+  "name": "theme-color-switch",
+  "version": "1.1.1",
+  "description": "This a script to switch color specific styles less file and which you can use to change theme dynamically in browser",
   "keywords": [
     "color",
     "color-function",
@@ -11,11 +11,11 @@
     "less",
     "theme",
     "theme-color",
-    "toggle"
+    "switch"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/kingller/theme-color-toggle.git"
+    "url": "git://github.com/kingller/theme-color-switch.git"
   },
   "license": "ISC",
   "author": {

@@ -61,7 +61,7 @@ class Theme extends Component {
     }
 
     changeColor = (vars) => {
-        const less = require('theme-color-toggle');
+        const less = require('theme-color-switch');
         less.render(
             colorSource,
             {
