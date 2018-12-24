@@ -11,10 +11,10 @@
   "dependencies": {
     "raw-loader": "^1.0.0",
     "react": "^16.6.1",
-    "react-app-rewired": "^1.6.2",
+    "react-app-rewired": "1.6.2",
     "react-color": "^2.14.1",
     "react-dom": "^16.6.1",
-    "react-scripts": "^2.1.1",
+    "react-scripts": "2.1.1",
     "theme-color-generator": "^1.2.2",
     "theme-color-switch": "^1.1.1"
   },
