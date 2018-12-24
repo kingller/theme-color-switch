@@ -14,8 +14,9 @@ Try out the [demo](https://kingller.github.io/theme-color-switch/)
 
 ```
 const less = require('theme-color-switch');
+const colorSource = require('!raw-loader!./public/color.less'); // theme file content which generate by theme-color-generator
 less.render(
-   colorSource, // theme file content which generate by theme-color-generator
+   colorSource,
    {
        modifyVars: {
            '@theme-color': '#0035ff' // the variables in theme file which you want to change
