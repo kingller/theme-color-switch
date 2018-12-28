@@ -35,7 +35,7 @@ less.render(
 ## Note: You need to generate `color.less` file with [theme-color-generator](https://github.com/kingller/theme-color-generator) ( as `color.js` in example ) first, then toggle color with this package as `Theme.js` in example 
 
 
-Now you can update colors by updating less avriables as the example
+Now you can change colors by modify less avriables as the example
 
 
 如只想使用主题切换的，上面的内容就已完成。
