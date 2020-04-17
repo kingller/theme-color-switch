@@ -8,6 +8,10 @@
 
 # Next
 
+
+# 1.1.2
+1. <font color=red>修复</font> 含有!important的样式变量无法替换
+
 # 1.1.1
 1. <font color=green>新增</font> Online Demo
 2. <font color=orange>修改</font> Change package name
