@@ -9,6 +9,10 @@
 # Next
 
 
+# 1.2.0
+1. <font color=green>新增</font> `TypeScript`定义文件
+2. <font color=green>新增</font> `color`转换函数
+
 # 1.1.2
 1. <font color=red>修复</font> 含有!important的样式变量无法替换
 

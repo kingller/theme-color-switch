@@ -1,6 +1,6 @@
 {
   "name": "theme-color-switch",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "This a script to switch color specific styles less file and which you can use to change theme dynamically in browser",
   "keywords": [
     "color",
@@ -9,9 +9,9 @@
     "dynamic-theme",
     "function",
     "less",
+    "switch",
     "theme",
-    "theme-color",
-    "switch"
+    "theme-color"
   ],
   "repository": {
     "type": "git",
@@ -24,11 +24,13 @@
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "utils/",
     "package.json",
     "README.md"
   ],
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

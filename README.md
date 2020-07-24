@@ -1,6 +1,9 @@
 # theme-color-switch
 
-This a script to switch color specific styles less file and which you can use to change theme dynamically in browser
+This a script to switch color specific styles less file and which you can use to change theme dynamically in browser.  
+
+Also you can use these less syntax functions for color conversion.
+
 
 ## Install
 ```
@@ -239,3 +242,14 @@ p {
     e: #ffffff // white
 }
 ```
+
+### 颜色转换函数
+
+#### color
+Returns: `Color`  
+Example | Output
+:--|:--
+`color('#5a8120')` | `#5a8120`  
+`color('rgb(90, 129, 32)')` | `#5a8120`  
+`color('rgba(90, 129, 32, 0.5)')` | `rgba(90, 129, 32, 0.5)`  
+  
