@@ -47,13 +47,23 @@ function parseColorFunction(colorFunction, params, funcName) {
         if (params.length > 0) {
             var isColorParam = params[0] instanceof Color;
             var paramsNum = isColorParam ? 1 : 3;
-            if (/a$/.test(funcName)) {
+            const hasOpacity = /a$/.test(funcName);
+            if (hasOpacity) {
                 paramsNum = isColorParam ? 2 : 4;
             }
             paramsNum = Math.min(paramsNum, params.length);
-            for (var num = 0; num < paramsNum; num++) {
-                if ((num !== 0 || !isColorParam) && typeof params[num] === 'string') {
-                    params[num] = parseDimension(params[num]);
+            if (paramsNum <= 2 && !isColorParam && /^rgb/.test(funcName)) {
+                params[0] = new Color(params[0]);
+            }
+            if (hasOpacity || !(/^rgb/.test(funcName))) {
+                var index = paramsNum - 1;
+                if (index > 0 && typeof params[index] === 'string') {
+                    params[index] = parseDimension(params[index]);
+                }
+                if (!(/^rgb/.test(funcName))) {
+                    for (var num = 1; num < paramsNum - 1; num++) {
+                        params[num] = parseDimension(params[num]);
+                    }
                 }
             }
         }

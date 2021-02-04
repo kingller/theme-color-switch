@@ -9,6 +9,10 @@
 # Next
 
 
+# 1.2.1
+1. <font color=red>修复</font> `rgb`, `rgba`不能直接传入十六进制颜色码
+
+
 # 1.2.0
 1. <font color=green>新增</font> `TypeScript`定义文件
 2. <font color=green>新增</font> `color`转换函数
