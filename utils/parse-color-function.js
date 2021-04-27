@@ -55,7 +55,13 @@ function parseColorFunction(colorFunction, params, funcName) {
             if (paramsNum <= 2 && !isColorParam && /^rgb/.test(funcName)) {
                 params[0] = new Color(params[0]);
             }
-            if (hasOpacity || !(/^rgb/.test(funcName))) {
+            if (paramsNum >= 3 && !isColorParam && /^rgb/.test(funcName)) {
+                for (var pIndex = 0; pIndex <= paramsNum - 1; pIndex++) {
+                    if (typeof params[pIndex] === 'string') {
+                        params[pIndex] = parseDimension(params[pIndex]);
+                    }
+                }
+            } else if (hasOpacity || !(/^rgb/.test(funcName))) {
                 var index = paramsNum - 1;
                 if (index > 0 && typeof params[index] === 'string') {
                     params[index] = parseDimension(params[index]);
