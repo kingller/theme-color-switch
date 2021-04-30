@@ -9,6 +9,10 @@
 # Next
 
 
+# 1.2.3
+1. <font color=red>修复</font> IE10及以下报错
+
+
 # 1.2.2
 1. <font color=red>修复</font> 变量传入的`rgb`, `rgba`只能为十六进制颜色码，不支持RGB三原色值
 

@@ -47,7 +47,7 @@ function parseColorFunction(colorFunction, params, funcName) {
         if (params.length > 0) {
             var isColorParam = params[0] instanceof Color;
             var paramsNum = isColorParam ? 1 : 3;
-            const hasOpacity = /a$/.test(funcName);
+            var hasOpacity = /a$/.test(funcName);
             if (hasOpacity) {
                 paramsNum = isColorParam ? 2 : 4;
             }
