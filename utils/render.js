@@ -2,7 +2,7 @@
 
 var varsToJs = require('./vars-to-js.js');
 var replaceVarColor = require('./replace-color-in-var.js');
-var calcColorFunction = require('./calc-color-function.js');
+var calcColorFunction = require('./calc-var-color-function.js');
 var replaceVarToCss = require('./replace-var-to-css.js');
 
 function render(input, options, callback) {

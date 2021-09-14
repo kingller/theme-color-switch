@@ -4,7 +4,7 @@ var colorFunctions = require('./color.js');
 var parseColorFunction = require('./parse-color-function.js');
 
 function dealColorParams(colorFunction, params, funcName) {
-    if(typeof params === 'string') {
+    if (typeof params === 'string') {
         params = params.split(',');
     }
     var newParams = [];
@@ -43,7 +43,7 @@ function convertParams(params, covertColor) {
 }
 
 function fixValues(node, values) {
-    if(!node) {
+    if (!node) {
         return;
     }
     if (node.name) {
@@ -57,7 +57,7 @@ function fixValues(node, values) {
             node.function = node.name + '(' + convertParams(node.params) + ')';
             values.push({
                 value: node.function,
-                type: 'function'
+                type: 'function',
             });
         }
         if (node.end) {
@@ -81,37 +81,33 @@ function calcColor(treeNodes) {
         return '';
     }
     var values = [];
-    treeNodes.forEach(function(node) {
+    treeNodes.forEach(function (node) {
         recursionCalcColor(node, node.children);
         fixValues(node, values);
     });
     return convertParams(values);
 }
 
-function recursionCalcColor(parantNode, treeNodes) {
+function recursionCalcColor(parentNode, treeNodes) {
     if (!treeNodes) {
         return '';
     }
     var values = [];
-    treeNodes.forEach(function(node) {
+    treeNodes.forEach(function (node) {
         if (node.children && node.children.length >= 0) {
             recursionCalcColor(node, node.children);
         }
         fixValues(node, values);
     });
-    parantNode.params = values;
+    parentNode.params = values;
 }
 
-function calcVarColor(varJs) {
-    if (!varJs) {
-        return varJs;
+function calcColorValue(value) {
+    if (!value) {
+        return value;
     }
-    Object.keys(varJs).forEach(function (varName) {
-        var curVarValue = varJs[varName];
-        var treeNodes = parserInput(curVarValue);
-        varJs[varName] = calcColor(treeNodes);
-    });
-    return varJs;
-};
+    var treeNodes = parserInput(value);
+    return calcColor(treeNodes);
+}
 
-module.exports = calcVarColor;
+module.exports = calcColorValue;

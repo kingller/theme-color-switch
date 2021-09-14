@@ -3,7 +3,8 @@
 var render = require('./utils/render.js');
 var colorFunctions = require('./utils/color.js');
 var parseColorFunction = require('./utils/parse-color-function.js');
-var Color = require('./utils/tree/color');
+var Color = require('./utils/tree/color.js');
+var calcColorValue = require('./utils/calc-color-function.js');
 
 var exportObj = {
     render: render,
@@ -20,12 +21,15 @@ exportObj.color = function (value) {
         return value;
     }
     if (value && typeof value === 'string') {
-        if (/^rgba?/.test(value)) {
-            var funcName = 'rgb';
-            if (/^rgba/.test(value)) {
-                funcName = 'rgba';
+        value = calcColorValue(value);
+    }
+    if (value && typeof value === 'string') {
+        var funcNameMatches = value.match(/^\s*([a-zA-Z]+?)\((.+)\)/);
+        if (funcNameMatches) {
+            var funcName = funcNameMatches[1];
+            if (exportObj[funcName]) {
+                return exportObj[funcName].apply(null, funcNameMatches[2].split(','));
             }
-            return exportObj[funcName].apply(null, value.match(/(\d+\.*\d*|\d*\.*\d+)/g));
         }
     }
     return new Color(value);
