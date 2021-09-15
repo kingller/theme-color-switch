@@ -247,8 +247,8 @@ p {
 
 #### color
 Returns: `Color`  
-Example | Output
-:--|:--
+Example | Output  
+:--|:--  
 color('#5a8120') | #5a8120  
 color('rgb(90, 129, 32)') | #5a8120  
 color('rgba(90, 129, 32, 0.5)') | rgba(90, 129, 32, 0.5)  
