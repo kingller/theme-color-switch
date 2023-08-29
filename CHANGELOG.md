@@ -9,6 +9,9 @@
 # Next
 
 
+# 1.3.1
+1. <font color=red>修复</font> 颜色变量的值直接引用另一个颜色变量时未成功替换
+
 
 # 1.3.0
 1. <font color=blue>增强</font> `color`转换函数支持传入包含颜色函数的值

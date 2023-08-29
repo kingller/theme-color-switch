@@ -6,7 +6,7 @@ function replaceKnownValue (varJs, knownVarJs, unknownVarJs) {
         var varValue = knownVarJs[varName];
         Object.keys(unknownVarJs).forEach(function (unKnownVarName) {
             var unKnownValue = unknownVarJs[unKnownVarName];
-            unKnownValue = unKnownValue.replace(new RegExp(varName + '(,|;|\\s|\\)|\\n)', 'g'), varValue + '$1');
+            unKnownValue = unKnownValue.replace(new RegExp(varName + '(,|;|\\s|\\)|\\n|$)', 'g'), varValue + '$1');
             if (!/@/.test(unKnownValue)) {
                 knownVarJs[unKnownVarName] = unKnownValue;
                 varJs[unKnownVarName] = unKnownValue;
