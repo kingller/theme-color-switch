@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
-/* eslint-disable import/no-webpack-loader-syntax */
 import React, { Component } from "react";
-import colorSource from '!raw-loader!./dest/color.less';
+import colorSource from '!!raw-loader!./dest/color.less';
 
 function addCSS(cssText) {
     function setCssText(styleEl) {
