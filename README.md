@@ -57,6 +57,17 @@ let shadeColor = shade('#007fff', '50%').toCSS();
 let fadeAndTintColor = fade(tint('#007fff', '30%'), '10%').toCSS();
 ```
 
+#### 如何支持 `rgb`、`rgba` 的颜色值转换
+
+使用 `color`（或 `rgb`、`rgba`）函数先将其转换成 `Color` 对象，再将其传给颜色函数
+
+```javascript
+import { color, tint } from 'theme-color-switch';
+
+let tintColor1 = tint(color('rgb(90, 129, 32)'), '30%').toCSS();
+let tintColor2 = tint(color('rgba(90, 129, 32, 0.5)'), '30%').toCSS();
+```
+
 ### 颜色定义函数
 
 #### rgb
